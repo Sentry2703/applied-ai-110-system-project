@@ -19,15 +19,50 @@ Replace this paragraph with your own summary of what your version does.
 
 Explain your design in plain language.
 
-Some prompts to answer:
+write a short paragraph explaining your understanding of how real-world recommendations work and what your version will prioritize
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+In the real world, a recommender system makes its decisions based on mostly 2 factors, what people with similar tastes choose (Collaborative Filtering), or what songs are similar to songs that the user already likes (Content-Based Filtering).
+Since my version is lacking users, I will be more focused on Content-Based Filtering, i.e picking song recommendations based on similar attributes.
+My `Song` class will primarily use genre, mood, energy, acousticness, tempo_bpm, and my `UserProfile` class uses favorite genre, favorite_mood, target_energy, likes_acoustic.
+The recommender will compute recommendability scores, based on similarities to previously liked songs based on our aforementioned `Song` features
 
-You can include a simple diagram or bullet list if helpful.
+### Algorithmic Flow Chart
+
+```
+  flowchart TD
+    A([User Preferences\ngenre: lofi · mood: chill\nenergy: 0.4 · likes_acoustic: true]) --> B
+
+    B[Load songs from\ndata/songs.csv] --> C
+
+    C{For each song\nin catalog}
+
+    C --> D1[Score: genre match\n× 3.0]
+    C --> D2[Score: mood match\n× 2.0]
+    C --> D3[Score: energy closeness\n× 1.5]
+    C --> D4[Score: acousticness closeness\n× 1.0]
+    C --> D5[Score: danceability closeness\n× 0.5]
+    C --> D6[Score: tempo closeness\n× 0.25]
+
+    D1 & D2 & D3 & D4 & D5 & D6 --> E
+
+    E[Sum all weighted scores\nmax possible = 8.25]
+
+    E --> F{More songs\nremaining?}
+
+    F -- Yes --> C
+    F -- No --> G
+
+    G[Sort all songs\nby score descending]
+
+    G --> H[Slice top k results\nk = 5]
+
+    H --> I([Output Recommendations\ntitle · score · explanation])
+```
+
+### Potential Biases
+
+There is a heavy bias towards genre and mood, which might miss out on sleeper picks based on other matching categories.
+
 
 ---
 

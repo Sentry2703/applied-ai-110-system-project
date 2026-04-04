@@ -9,3 +9,18 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Crown Heights Cipher,Verse Kings,hip-hop,energetic,0.85,95,0.68,0.91,0.08
+12,Still Water Sonata,Clara Voss,classical,peaceful,0.18,58,0.52,0.22,0.97
+13,Velvet Kiss,Sable June,r&b,romantic,0.61,92,0.87,0.78,0.31
+14,Dusty Road Home,The Pine Creek Band,country,nostalgic,0.44,88,0.73,0.55,0.83
+15,Drop Zone,Axial,edm,euphoric,0.96,140,0.88,0.94,0.03
+16,Iron Throne,Void Hammer,metal,angry,0.95,168,0.21,0.52,0.06
+17,Hollow Oak,Fern Hollow,folk,melancholic,0.26,74,0.28,0.33,0.94
+18,Island Sunrise,Coastal Rhythm,reggae,uplifting,0.58,85,0.89,0.72,0.55
+19,Empty Glass,Blind River,blues,sad,0.33,68,0.19,0.43,0.88
+20,Groove Machine,The Slick Collective,funk,energetic,0.87,112,0.85,0.93,0.12
+21,Silk & Smoke,Ivory Lane,soul,romantic,0.54,86,0.83,0.67,0.46
+22,4AM Freestyle,Drift Theory,trap,moody,0.69,140,0.38,0.85,0.04
+23,Café do Norte,Lua Nova,bossa nova,dreamy,0.31,82,0.76,0.61,0.91
+24,Static Memory,The Pale Circuit,indie rock,nostalgic,0.71,116,0.55,0.64,0.27
+25,Neon Seoul,STΛR88,k-pop,uplifting,0.89,128,0.91,0.92,0.07
