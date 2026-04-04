@@ -63,7 +63,7 @@ The recommender will compute recommendability scores, based on similarities to p
 
 There is a heavy bias towards genre and mood, which might miss out on sleeper picks based on other matching categories.
 
-
+![Run through of recommendation](image.png)
 ---
 
 ## Getting Started
