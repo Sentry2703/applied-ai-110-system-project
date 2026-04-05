@@ -64,6 +64,20 @@ The recommender will compute recommendability scores, based on similarities to p
 There is a heavy bias towards genre and mood, which might miss out on sleeper picks based on other matching categories.
 
 ![Run through of recommendation](image.png)
+
+### Other Run throughs
+
+#### Contradictory 
+![alt text](image-1.png)
+
+#### Gym Session
+![alt text](image-2.png)
+
+#### Late Night Choir
+![alt text](image-3.png)
+
+#### Sunday Morning 
+![alt text](image-4.png)
 ---
 
 ## Getting Started
@@ -103,144 +117,35 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
+**Experiment 1 — Genre weight reduced from 3.0 to 0.5 (Late Night Coder profile)**
 
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+With the default weight of 3.0, the top 3 results for the Late Night Coder profile were all lofi songs: Library Rain (8.01), Midnight Coding (7.92), and Focus Flow (6.03). Spacewalk Thoughts (ambient/chill) sat at rank 4 with a score of 4.85.
+
+After lowering genre weight to 0.5, Spacewalk Thoughts jumped to rank 3 (4.85), pushing Focus Flow down to rank 4 (3.53). This happened because Spacewalk Thoughts has very similar energy (0.28) and acousticness (0.92) to the lofi songs, and mood matched (chill) — so with genre no longer dominating, its numeric features were enough to beat a lofi song that only partially matched on mood. The takeaway: genre weight is the primary guard against cross-genre drift. Weakening it lets acoustically similar but stylistically different songs sneak in.
+
+---
+
+**Experiment 2 — Energy weight doubled from 1.5 to 3.0 (Contradictory profile)**
+
+With the default weights, the Contradictory profile (metal/peaceful/low energy/acoustic) ranked Iron Throne 2nd (3.63) because genre matched — even though every numeric feature pointed away from it. After doubling the energy weight to 3.0, Iron Throne dropped to rank 4 (3.85 total, but now outweighed by three songs with closer energy values). Still Water Sonata jumped to a score of 6.47, and Hollow Oak and Spacewalk Thoughts both overtook Iron Throne purely on energy and acousticness closeness. This confirmed that the genre match alone (worth 3.0 points) can be overwhelmed when a continuous feature carries enough weight — and that the Contradictory profile's genre preference is actively working against it in this configuration.
 
 ---
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
-
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+- **Tiny catalog:** The system only scores against 25 songs, so even a perfect profile match returns a shallow pool. A user whose preferred genre has only one entry (e.g. blues, bossa nova) will get four recommendations from genres they didn't ask for.
+- **No content understanding:** The recommender has no knowledge of lyrics, language, vocal style, or instrumentation detail. Two songs can score identically even if one has screamed vocals and one has soft piano.
+- **Genre monopoly:** When genre and mood match multiple songs, those songs dominate all top slots. A lofi user will always see three lofi results with no exposure to adjacent styles like ambient or indie pop.
+- **Self-contradictory profiles are not detected:** If a user's preferences conflict internally (e.g. metal genre + peaceful mood + low energy), the system still returns five results with no warning — the top-ranked song wins almost by accident.
+- **Static weights:** The scoring weights (3.0, 2.0, 1.5 ...) are fixed by the developer and never adapt to how the user actually behaves. A user who skips every high-energy result will keep receiving them.
 
 ---
 
 ## Reflection
 
-Read and complete `model_card.md`:
+Building this system made it clear that a recommender is not really about finding the "best" song — it is about turning a user's preferences into a number and then comparing that number across a catalog. Every design decision along the way (which features to include, how much weight each one gets, what counts as a match) is a human judgment call dressed up as math. The scoring formula feels objective once it is running, but the weights are arbitrary choices the developer made, and changing them by even a small amount can completely reorder the results. That gap between "looks like a calculation" and "is actually a set of assumptions" is something real recommendation systems deal with at massive scale.
 
-[**Model Card**](model_card.md)
-
-Write 1 to 2 paragraphs here about what you learned:
-
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
+The place where bias showed up most clearly was in catalog representation. Genres with three songs in the dataset (lofi) had a structural advantage over genres with one (blues, bossa nova) — not because of anything in the scoring logic, but simply because more candidates means more chances for a close numeric match. A real product with this design would quietly under-serve users whose tastes fall outside whatever the team happened to catalog first, without any error or warning to indicate the problem. That made it obvious why fairness in AI is not just about the algorithm — it is equally about whose music, whose moods, and whose listening contexts made it into the data in the first place.
 
 
 ---
-
-## 7. `model_card_template.md`
-
-Combines reflection and model card framing from the Module 3 guidance. :contentReference[oaicite:2]{index=2}  
-
-```markdown
-# 🎧 Model Card - Music Recommender Simulation
-
-## 1. Model Name
-
-Give your recommender a name, for example:
-
-> VibeFinder 1.0
-
----
-
-## 2. Intended Use
-
-- What is this system trying to do
-- Who is it for
-
-Example:
-
-> This model suggests 3 to 5 songs from a small catalog based on a user's preferred genre, mood, and energy level. It is for classroom exploration only, not for real users.
-
----
-
-## 3. How It Works (Short Explanation)
-
-Describe your scoring logic in plain language.
-
-- What features of each song does it consider
-- What information about the user does it use
-- How does it turn those into a number
-
-Try to avoid code in this section, treat it like an explanation to a non programmer.
-
----
-
-## 4. Data
-
-Describe your dataset.
-
-- How many songs are in `data/songs.csv`
-- Did you add or remove any songs
-- What kinds of genres or moods are represented
-- Whose taste does this data mostly reflect
-
----
-
-## 5. Strengths
-
-Where does your recommender work well
-
-You can think about:
-- Situations where the top results "felt right"
-- Particular user profiles it served well
-- Simplicity or transparency benefits
-
----
-
-## 6. Limitations and Bias
-
-Where does your recommender struggle
-
-Some prompts:
-- Does it ignore some genres or moods
-- Does it treat all users as if they have the same taste shape
-- Is it biased toward high energy or one genre by default
-- How could this be unfair if used in a real product
-
----
-
-## 7. Evaluation
-
-How did you check your system
-
-Examples:
-- You tried multiple user profiles and wrote down whether the results matched your expectations
-- You compared your simulation to what a real app like Spotify or YouTube tends to recommend
-- You wrote tests for your scoring logic
-
-You do not need a numeric metric, but if you used one, explain what it measures.
-
----
-
-## 8. Future Work
-
-If you had more time, how would you improve this recommender
-
-Examples:
-
-- Add support for multiple users and "group vibe" recommendations
-- Balance diversity of songs instead of always picking the closest match
-- Use more features, like tempo ranges or lyric themes
-
----
-
-## 9. Personal Reflection
-
-A few sentences about what you learned:
-
-- What surprised you about how your system behaved
-- How did building this change how you think about real music recommenders
-- Where do you think human judgment still matters, even if the model seems "smart"
-
