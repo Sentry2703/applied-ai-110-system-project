@@ -1,0 +1,201 @@
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
+1,Chamber of Reflection,Mac DeMarco,lofi,relaxed,0.43,65,0.53,0.41,0.77
+2,The Moon,The Microphones,lofi,relaxed,0.4,60,0.61,0.44,0.93
+3,I Want Wind to Blow,The Microphones,lofi,focused,0.42,94,0.32,0.84,0.83
+4,Freaking Out the Neighborhood,Mac DeMarco,lofi,relaxed,0.39,95,0.1,0.21,0.55
+5,"Holland, 1945",Neutral Milk Hotel,lofi,dreamy,0.28,74,0.61,0.68,0.76
+6,Random Rules,Silver Jews,lofi,chill,0.26,75,0.23,0.32,0.79
+7,Game of Pricks,Guided by Voices,lofi,relaxed,0.33,81,0.72,0.64,0.93
+8,My Roots Are Strong And Deep,The Microphones,lofi,relaxed,0.41,84,0.67,0.58,0.81
+9,The One That Got Away,Katy Perry,pop,happy,0.65,118,0.48,0.52,0.35
+10,Pink Pony Club,Chappell Roan,pop,energetic,0.82,100,0.2,0.4,0.22
+11,Locked Out of Heaven,Bruno Mars,pop,romantic,0.79,103,0.93,0.4,0.41
+12,Love You Like a Love Song,Selena Gomez & the Scene,pop,uplifting,0.8,117,0.49,0.94,0.57
+13,Toxic,Britney Spears,pop,happy,0.66,119,0.17,0.85,0.55
+14,no tears left to cry,Ariana Grande,pop,energetic,0.84,135,0.11,0.49,0.52
+15,Style,Taylor Swift,pop,romantic,0.88,109,0.19,0.8,0.41
+16,Last Friday Night (T.G.I.F.),Katy Perry,pop,happy,0.65,103,0.24,0.48,0.28
+17,The Chain - 2004 Remaster,Fleetwood Mac,rock,intense,0.79,152,0.79,0.52,0.21
+18,Iris,Goo Goo Dolls,rock,angry,0.68,157,0.42,0.53,0.64
+19,Sign of the Times,Harry Styles,rock,moody,0.83,161,0.22,0.31,0.53
+20,Everlong,Foo Fighters,rock,moody,0.73,143,0.79,0.56,0.35
+21,Still Into You,Paramore,rock,intense,0.68,157,0.42,0.24,0.23
+22,"Lover, You Should've Come Over",Jeff Buckley,rock,moody,0.76,136,0.14,0.59,0.68
+23,Scar Tissue,Red Hot Chili Peppers,rock,energetic,0.69,155,0.45,0.57,0.7
+24,All I Wanted,Paramore,rock,angry,0.74,122,0.63,0.21,0.12
+25,Subwoofer Lullaby,C418,ambient,peaceful,0.22,89,0.88,0.59,0.95
+26,Mice on Venus,C418,ambient,relaxed,0.4,71,0.95,0.53,0.78
+27,Living Mice,C418,ambient,focused,0.3,70,0.77,0.64,0.8
+28,Minecraft,C418,ambient,dreamy,0.19,69,0.23,0.68,0.83
+29,Haggstrom,C418,ambient,peaceful,0.23,75,0.27,0.68,0.72
+30,Key,C418,ambient,dreamy,0.3,87,0.73,0.24,0.66
+31,Beginning,C418,ambient,peaceful,0.26,58,0.44,0.75,0.72
+32,Danny,C418,ambient,peaceful,0.34,68,0.23,0.21,0.62
+33,Like a Tattoo,Sade,jazz,moody,0.59,107,0.51,0.6,0.66
+34,Paradise,Sade,jazz,romantic,0.4,93,0.21,0.6,0.83
+35,I Fall in Love Too Easily,Chet Baker,jazz,nostalgic,0.31,128,0.89,0.4,0.57
+36,Back to Black,Amy Winehouse,jazz,romantic,0.31,98,0.34,0.48,0.76
+37,My Way,Frank Sinatra,jazz,moody,0.59,98,0.24,0.56,0.78
+38,Take Five,The Dave Brubeck Quartet,jazz,relaxed,0.66,115,0.76,0.31,0.6
+39,That's Life,Frank Sinatra,jazz,moody,0.32,124,0.93,0.85,0.56
+40,Don't Know Why,Norah Jones,jazz,romantic,0.32,128,0.51,0.55,0.59
+41,Blinding Lights,The Weeknd,synthwave,nostalgic,0.83,122,0.81,0.76,0.06
+42,Resonance,Home,synthwave,tense,0.58,131,0.55,0.35,0.2
+43,I CAN'T STOP ME,TWICE,synthwave,dreamy,0.67,104,0.91,0.69,0.1
+44,Apple,Charli xcx,synthwave,nostalgic,0.72,97,0.84,0.64,0.09
+45,Roller Mobster,Carpenter Brut,synthwave,nostalgic,0.84,109,0.86,0.23,0.09
+46,In Your Eyes,The Weeknd,synthwave,nostalgic,0.65,131,0.72,0.82,0.07
+47,Future Club,Perturbator,synthwave,tense,0.72,98,0.94,0.65,0.19
+48,Le Perv,Carpenter Brut,synthwave,moody,0.65,131,0.58,0.78,0.06
+49,Space Song,Beach House,indie pop,happy,0.6,103,0.47,0.77,0.44
+50,Out of My League,Fitz and the Tantrums,indie pop,dreamy,0.68,108,0.29,0.85,0.17
+51,Sofia,Clairo,indie pop,uplifting,0.63,135,0.23,0.34,0.37
+52,Buzzcut Season,Lorde,indie pop,bittersweet,0.76,131,0.38,0.53,0.65
+53,Pumped Up Kicks,Foster the People,indie pop,uplifting,0.7,99,0.26,0.43,0.18
+54,Team,Lorde,indie pop,happy,0.68,95,0.22,0.44,0.18
+55,There Is a Light That Never Goes Out - 2011 Remaster,The Smiths,indie pop,bittersweet,0.56,96,0.85,0.29,0.61
+56,Diet Mountain Dew,Lana Del Rey,indie pop,dreamy,0.56,132,0.75,0.71,0.51
+57,Flashing Lights,Kanye West,hip-hop,uplifting,0.86,110,0.45,0.25,0.19
+58,Heartbeat,Childish Gambino,hip-hop,focused,0.6,115,0.29,0.83,0.17
+59,All Falls Down,Kanye West,hip-hop,uplifting,0.61,98,0.58,0.66,0.47
+60,Fashion Killa,A$AP Rocky,hip-hop,uplifting,0.78,101,0.21,0.79,0.53
+61,I Wonder,Kanye West,hip-hop,energetic,0.6,86,0.28,0.33,0.67
+62,Touch the Sky,Kanye West,hip-hop,moody,0.56,91,0.45,0.97,0.58
+63,Ms. Jackson,OutKast,hip-hop,moody,0.58,81,0.43,0.49,0.35
+64,Swimming Pools (Drank),Kendrick Lamar,hip-hop,energetic,0.75,114,0.18,0.55,0.35
+65,Gymnopédie No. 1,Erik Satie,classical,hopeful,0.31,113,0.88,0.93,0.98
+66,Clair de lune,Claude Debussy,classical,melancholic,0.27,86,0.23,0.77,0.84
+67,"Clair de lune, L. 32",Claude Debussy,classical,hopeful,0.24,64,0.79,0.21,0.81
+68,"The Planets, Op. 32: IV. Jupiter, the Bringer of Jollity",Gustav Holst,classical,peaceful,0.32,95,0.21,0.21,0.91
+69,On the Nature of Daylight,Max Richter,classical,peaceful,0.42,60,0.93,0.65,0.84
+70,"Adagio for Strings, Op. 11",Samuel Barber,classical,hopeful,0.22,81,0.63,0.2,0.9
+71,Dies irae,Giuseppe Verdi,classical,hopeful,0.48,90,0.78,0.6,0.95
+72,"Symphony No. 5 in C Minor, Op. 67: I. Allegro con brio",Ludwig van Beethoven,classical,melancholic,0.25,91,0.24,0.7,0.95
+73,Pink + White,Frank Ocean,r&b,moody,0.7,98,0.54,0.88,0.17
+74,Lost,Frank Ocean,r&b,uplifting,0.76,107,0.4,0.34,0.19
+75,Thinkin Bout You,Frank Ocean,r&b,chill,0.53,113,0.43,0.22,0.18
+76,Kiss It Better,Rihanna,r&b,romantic,0.73,99,0.83,0.34,0.24
+77,Novacane,Frank Ocean,r&b,moody,0.57,85,0.51,0.43,0.35
+78,American Boy,Estelle,r&b,uplifting,0.74,75,0.58,0.46,0.61
+79,Starboy,The Weeknd,r&b,romantic,0.64,112,0.64,0.68,0.46
+80,needy,Ariana Grande,r&b,moody,0.66,115,0.18,0.81,0.54
+81,Made in Japan,Buck Owens,country,hopeful,0.44,83,0.5,0.72,0.62
+82,Southern Nights,Glen Campbell,country,happy,0.56,111,0.89,0.97,0.7
+83,Need You Now,Lady Antebellum,country,hopeful,0.39,99,0.8,0.76,0.73
+84,Neon Moon,Brooks & Dunn,country,happy,0.4,115,0.48,0.47,0.57
+85,Wagon Wheel,Darius Rucker,country,happy,0.53,90,0.58,0.67,0.72
+86,TEXAS HOLD 'EM,Beyoncé,country,happy,0.37,97,0.8,0.89,0.86
+87,Jolene,Dolly Parton,country,sad,0.61,117,0.72,0.53,0.63
+88,Before He Cheats,Carrie Underwood,country,happy,0.61,86,0.62,0.39,0.58
+89,Faded,Alan Walker,edm,euphoric,0.81,129,0.8,0.21,0.01
+90,Solo (feat. Demi Lovato),Clean Bandit,edm,uplifting,0.93,137,0.82,0.94,0.06
+91,Waste It On Me (feat. BTS),Steve Aoki,edm,energetic,0.85,130,0.74,0.39,0.1
+92,Shelter,Porter Robinson,edm,euphoric,0.93,144,0.43,0.61,0.08
+93,The Middle,Zedd,edm,uplifting,0.91,150,0.39,0.88,0.03
+94,JUMP,BLACKPINK,edm,euphoric,0.9,148,0.88,0.93,0.05
+95,This Is What You Came For,Calvin Harris,edm,energetic,0.87,142,0.94,0.65,0.07
+96,More Than You Know,Axwell /\ Ingrosso,edm,intense,0.92,152,0.58,0.37,0.08
+97,My Own Summer (Shove It),Deftones,metal,intense,0.91,162,0.33,0.67,0.04
+98,Chop Suey!,System of a Down,metal,euphoric,0.93,144,0.65,0.28,0.13
+99,Toxicity,System of a Down,metal,angry,0.98,172,0.57,0.24,0.07
+100,Duality,Slipknot,metal,intense,0.92,164,0.21,0.94,0.16
+101,Sextape,Deftones,metal,euphoric,0.92,141,0.57,0.7,0.17
+102,Change (In the House of Flies),Deftones,metal,euphoric,0.9,165,0.77,0.48,0.12
+103,Aerials,System of a Down,metal,euphoric,0.95,173,0.7,0.73,0.07
+104,Psychosocial,Slipknot,metal,angry,0.95,197,0.66,0.92,0.14
+105,Riptide,Vance Joy,folk,melancholic,0.45,92,0.82,0.9,0.77
+106,500 Miles,"Peter, Paul & Mary",folk,relaxed,0.29,101,0.94,0.55,0.86
+107,Fourth of July,Sufjan Stevens,folk,nostalgic,0.55,65,0.93,0.53,0.65
+108,seven,Taylor Swift,folk,relaxed,0.42,87,0.76,0.33,0.78
+109,cardigan,Taylor Swift,folk,melancholic,0.4,75,0.6,0.54,0.84
+110,exile (feat. Bon Iver),Taylor Swift,folk,relaxed,0.43,100,0.39,0.65,0.82
+111,Knockin' on Heaven's Door,Bob Dylan,folk,relaxed,0.46,85,0.56,0.87,0.84
+112,In the Aeroplane Over the Sea,Neutral Milk Hotel,folk,nostalgic,0.23,88,0.24,0.7,0.92
+113,Could You Be Loved,Bob Marley & The Wailers,reggae,relaxed,0.57,105,0.22,0.54,0.4
+114,Is This Love,Bob Marley & The Wailers,reggae,uplifting,0.7,97,0.82,0.54,0.43
+115,Three Little Birds,Bob Marley & The Wailers,reggae,relaxed,0.7,101,0.85,0.83,0.13
+116,Santeria,Sublime,reggae,relaxed,0.71,88,0.58,0.55,0.4
+117,It Wasn't Me,Shaggy,reggae,happy,0.72,78,0.15,0.46,0.31
+118,Welcome to Jamrock,Damian Marley,reggae,happy,0.53,78,0.8,0.41,0.32
+119,Natural Mystic,Bob Marley & The Wailers,reggae,uplifting,0.53,92,0.15,0.54,0.39
+120,Me gustas tú,Manu Chao,reggae,peaceful,0.75,81,0.45,0.91,0.31
+121,The Thrill Is Gone,B.B. King,blues,sad,0.39,60,0.19,0.27,0.84
+122,From Eden,Hozier,blues,sad,0.58,109,0.19,0.94,0.89
+123,I'd Rather Go Blind,Etta James,blues,nostalgic,0.46,64,0.68,0.28,0.82
+124,Gravity,John Mayer,blues,moody,0.53,64,0.36,0.31,0.56
+125,Slow Dancing in a Burning Room,John Mayer,blues,melancholic,0.43,75,0.4,0.6,0.69
+126,Still Got the Blues,Gary Moore,blues,moody,0.41,88,0.12,0.98,0.85
+127,Smokestack Lightnin',Howlin' Wolf,blues,nostalgic,0.42,70,0.35,0.82,0.67
+128,Magnolia,J.J. Cale,blues,nostalgic,0.4,97,0.83,0.27,0.71
+129,24K Magic,Bruno Mars,funk,energetic,0.81,103,0.56,0.6,0.63
+130,September,"Earth, Wind & Fire",funk,energetic,0.85,126,0.91,0.5,0.63
+131,Uptown Funk (feat. Bruno Mars),Mark Ronson,funk,euphoric,0.79,131,0.33,0.35,0.64
+132,Let's Groove,"Earth, Wind & Fire",funk,euphoric,0.85,110,0.43,0.59,0.58
+133,Canned Heat,Jamiroquai,funk,energetic,0.76,107,0.7,0.32,0.4
+134,São Paulo (feat. Anitta),The Weeknd,funk,happy,0.76,106,0.45,0.52,0.18
+135,Wesley's Theory,Kendrick Lamar,funk,happy,0.73,122,0.47,0.87,0.52
+136,Crazy,Gnarls Barkley,funk,euphoric,0.94,108,0.59,0.21,0.17
+137,Love on the Brain,Rihanna,soul,romantic,0.61,98,0.81,0.26,0.13
+138,Kiss Of Life,Sade,soul,hopeful,0.57,103,0.61,0.53,0.26
+139,Ain't No Sunshine,Bill Withers,soul,melancholic,0.74,104,0.6,0.8,0.33
+140,Distant Lover,Marvin Gaye,soul,romantic,0.73,88,0.63,0.48,0.32
+141,Ain't No Mountain High Enough,Marvin Gaye,soul,melancholic,0.66,87,0.91,0.82,0.51
+142,Take Me to Church,Hozier,soul,hopeful,0.48,82,0.91,0.57,0.42
+143,Is It a Crime,Sade,soul,romantic,0.67,92,0.63,0.66,0.64
+144,Pearls,Sade,soul,melancholic,0.61,99,0.26,0.3,0.64
+145,7 rings,Ariana Grande,trap,moody,0.75,158,0.39,0.71,0.09
+146,20 Min,Lil Uzi Vert,trap,tense,0.73,124,0.44,0.79,0.12
+147,rockstar (feat. 21 Savage),Post Malone,trap,intense,0.74,126,0.79,0.38,0.15
+148,family ties (with Kendrick Lamar),Baby Keem,trap,tense,0.81,154,0.72,0.55,0.1
+149,"break up with your girlfriend, i'm bored",Ariana Grande,trap,tense,0.81,128,0.43,0.21,0.06
+150,Magnolia,Playboi Carti,trap,energetic,0.73,140,0.65,0.41,0.06
+151,Bodak Yellow,Cardi B,trap,energetic,0.62,142,0.22,0.38,0.14
+152,SICKO MODE,Travis Scott,trap,intense,0.63,160,0.83,0.28,0.05
+153,Billie Bossa Nova,Billie Eilish,bossa nova,happy,0.34,103,0.1,0.39,0.75
+154,the perfect pair,beabadoobee,bossa nova,relaxed,0.53,70,0.36,0.83,0.92
+155,I'll Change For You,Mitski,bossa nova,dreamy,0.4,100,0.16,0.88,0.86
+156,Wave,Antônio Carlos Jobim,bossa nova,dreamy,0.42,103,0.19,0.72,0.85
+157,O Telefone Tocou Novamente,Jorge Ben,bossa nova,relaxed,0.37,88,0.87,0.31,0.69
+158,The Girl From Ipanema,Stan Getz,bossa nova,romantic,0.47,88,0.56,0.45,0.9
+159,Mas que nada,Sérgio Mendes & Brasil '66,bossa nova,relaxed,0.33,84,0.35,0.88,0.87
+160,Garota de Ipanema,Antônio Carlos Jobim,bossa nova,relaxed,0.54,80,0.92,0.6,0.87
+161,The Adults Are Talking,The Strokes,indie rock,bittersweet,0.61,129,0.31,0.43,0.11
+162,505,Arctic Monkeys,indie rock,nostalgic,0.56,124,0.89,0.57,0.2
+163,No. 1 Party Anthem,Arctic Monkeys,indie rock,energetic,0.61,139,0.14,0.22,0.54
+164,I Wanna Be Yours,Arctic Monkeys,indie rock,bittersweet,0.8,139,0.77,0.41,0.37
+165,Why'd You Only Call Me When You're High?,Arctic Monkeys,indie rock,nostalgic,0.64,134,0.83,0.85,0.45
+166,Do I Wanna Know?,Arctic Monkeys,indie rock,moody,0.67,142,0.68,0.37,0.66
+167,Snap Out of It,Arctic Monkeys,indie rock,bittersweet,0.62,144,0.25,0.76,0.1
+168,Mr. Brightside,The Killers,indie rock,nostalgic,0.56,129,0.23,0.65,0.57
+169,Ditto,NewJeans,k-pop,happy,0.75,110,0.6,0.35,0.25
+170,DNA,BTS,k-pop,happy,0.74,118,0.21,0.4,0.68
+171,FANCY,TWICE,k-pop,happy,0.65,138,0.13,0.77,0.28
+172,FAKE LOVE,BTS,k-pop,energetic,0.92,136,0.88,0.96,0.61
+173,Gee,소녀시대,k-pop,playful,0.79,133,0.92,0.65,0.27
+174,The Feels,TWICE,k-pop,energetic,0.66,121,0.11,0.58,0.52
+175,ANTIFRAGILE,LE SSERAFIM,k-pop,playful,0.77,139,0.32,0.59,0.43
+176,What is Love?,TWICE,k-pop,uplifting,0.71,129,0.83,0.85,0.52
+177,Rush,Ayra Starr,afrobeats,happy,0.88,101,0.8,0.6,0.54
+178,Unforgettable,French Montana,afrobeats,uplifting,0.71,119,0.72,0.69,0.12
+179,Otro Atardecer,Bad Bunny,afrobeats,energetic,0.88,113,0.47,0.24,0.57
+180,All My Friends Know,PinkPantheress,afrobeats,happy,0.68,104,0.82,0.72,0.43
+181,Calm Down (with Selena Gomez),Rema,afrobeats,uplifting,0.88,112,0.7,0.23,0.41
+182,Princess Going Digital,Amaarae,afrobeats,happy,0.65,122,0.24,0.29,0.47
+183,Calm Down,Rema,afrobeats,energetic,0.68,133,0.55,0.84,0.32
+184,PROVENZA,KAROL G,afrobeats,happy,0.75,112,0.73,0.21,0.29
+185,Hips Don't Lie (feat. Wyclef Jean),Shakira,latin,romantic,0.78,137,0.85,0.56,0.39
+186,Chantaje (feat. Maluma),Shakira,latin,energetic,0.88,140,0.19,0.22,0.45
+187,DtMF,Bad Bunny,latin,happy,0.83,133,0.88,0.61,0.37
+188,Danza Kuduro,Don Omar,latin,energetic,0.75,142,0.94,0.6,0.24
+189,Livin' La Vida Loca,Ricky Martin,latin,energetic,0.76,145,0.14,0.43,0.68
+190,Moscow Mule,Bad Bunny,latin,romantic,0.64,110,0.46,0.87,0.68
+191,Obsesion,Aventura,latin,happy,0.92,110,0.43,0.63,0.12
+192,Gasolina,Daddy Yankee,latin,romantic,0.88,106,0.12,0.41,0.49
+193,Rush,Troye Sivan,house,energetic,0.72,118,0.19,0.91,0.03
+194,Lady (Hear Me Tonight),Modjo,house,energetic,0.82,134,0.29,0.91,0.04
+195,"yes, and?",Ariana Grande,house,euphoric,0.88,122,0.32,0.72,0.09
+196,Memories (feat. Kid Cudi),David Guetta,house,energetic,0.79,129,0.64,0.39,0.1
+197,Latch (feat. Sam Smith),Disclosure,house,euphoric,0.72,130,0.41,0.37,0.06
+198,One Kiss (with Dua Lipa),Calvin Harris,house,happy,0.71,135,0.61,0.46,0.04
+199,Clarity,Zedd,house,euphoric,0.94,135,0.37,0.71,0.07
+200,Rather Be (feat. Jess Glynne),Clean Bandit,house,uplifting,0.94,119,0.78,0.51,0.01
