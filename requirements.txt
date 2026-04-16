@@ -1,3 +1,6 @@
 pandas
 pytest
 streamlit
+requests
+numpy
+google-genai

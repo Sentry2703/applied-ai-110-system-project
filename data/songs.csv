@@ -24,3 +24,53 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 23,Café do Norte,Lua Nova,bossa nova,dreamy,0.31,82,0.76,0.61,0.91
 24,Static Memory,The Pale Circuit,indie rock,nostalgic,0.71,116,0.55,0.64,0.27
 25,Neon Seoul,STΛR88,k-pop,uplifting,0.89,128,0.91,0.92,0.07
+26,Chamber of Reflection,Mac DeMarco,lofi,dreamy,0.45,74,0.59,0.34,0.63
+27,The Moon,The Microphones,lofi,chill,0.47,78,0.11,0.54,0.82
+28,The One That Got Away,Katy Perry,pop,uplifting,0.84,113,0.65,0.45,0.33
+29,Pink Pony Club,Chappell Roan,pop,energetic,0.78,114,0.12,0.65,0.25
+30,The Chain - 2004 Remaster,Fleetwood Mac,rock,angry,0.91,127,0.41,0.84,0.57
+31,Iris,Goo Goo Dolls,rock,energetic,0.95,145,0.69,0.72,0.66
+32,Subwoofer Lullaby,C418,ambient,peaceful,0.37,66,0.55,0.24,0.7
+33,Mice on Venus,C418,ambient,relaxed,0.21,72,0.92,0.42,0.71
+34,Like a Tattoo,Sade,jazz,moody,0.34,120,0.82,0.88,0.78
+35,Paradise,Sade,jazz,relaxed,0.53,118,0.59,0.29,0.79
+36,Blinding Lights,The Weeknd,synthwave,dreamy,0.75,132,0.6,0.27,0.05
+37,Resonance,Home,synthwave,moody,0.71,125,0.4,0.81,0.23
+38,Space Song,Beach House,indie pop,uplifting,0.83,131,0.25,0.42,0.34
+39,Out of My League,Fitz and the Tantrums,indie pop,uplifting,0.61,105,0.85,0.51,0.43
+40,Flashing Lights,Kanye West,hip-hop,focused,0.76,114,0.51,0.96,0.18
+41,Heartbeat,Childish Gambino,hip-hop,energetic,0.64,81,0.34,0.22,0.46
+42,Gymnopédie No. 1,Erik Satie,classical,nostalgic,0.33,100,0.7,0.66,0.87
+43,Clair de lune,Claude Debussy,classical,peaceful,0.44,73,0.38,0.81,0.97
+44,Pink + White,Frank Ocean,r&b,chill,0.72,86,0.23,0.41,0.25
+45,Lost,Frank Ocean,r&b,chill,0.67,86,0.5,0.81,0.19
+46,Made in Japan,Buck Owens,country,hopeful,0.51,121,0.35,0.82,0.84
+47,Southern Nights,Glen Campbell,country,hopeful,0.44,99,0.95,0.23,0.63
+48,Faded,Alan Walker,edm,intense,0.9,151,0.31,0.31,0.03
+49,Solo (feat. Demi Lovato),Clean Bandit,edm,uplifting,0.95,147,0.61,0.79,0.01
+50,My Own Summer (Shove It),Deftones,metal,angry,0.98,177,0.14,0.54,0.1
+51,Chop Suey!,System of a Down,metal,tense,0.95,192,0.91,0.82,0.08
+52,Riptide,Vance Joy,folk,relaxed,0.25,82,0.41,0.88,0.72
+53,500 Miles,"Peter, Paul & Mary",folk,nostalgic,0.47,87,0.16,0.66,0.83
+54,Could You Be Loved,Bob Marley & The Wailers,reggae,relaxed,0.46,91,0.41,0.58,0.15
+55,Is This Love,Bob Marley & The Wailers,reggae,uplifting,0.66,104,0.33,0.95,0.27
+56,The Thrill Is Gone,B.B. King,blues,sad,0.44,73,0.18,0.92,0.68
+57,From Eden,Hozier,blues,sad,0.43,69,0.75,0.58,0.8
+58,24K Magic,Bruno Mars,funk,energetic,0.74,115,0.48,0.51,0.59
+59,September,"Earth, Wind & Fire",funk,playful,0.88,106,0.4,0.37,0.29
+60,Love on the Brain,Rihanna,soul,romantic,0.5,95,0.61,0.38,0.48
+61,Thinkin Bout You,Frank Ocean,soul,melancholic,0.42,109,0.59,0.55,0.57
+62,7 rings,Ariana Grande,trap,moody,0.73,149,0.43,0.56,0.05
+63,20 Min,Lil Uzi Vert,trap,moody,0.64,148,0.9,0.69,0.08
+64,Billie Bossa Nova,Billie Eilish,bossa nova,relaxed,0.28,83,0.64,0.4,0.92
+65,the perfect pair,beabadoobee,bossa nova,relaxed,0.48,100,0.74,0.46,0.79
+66,The Adults Are Talking,The Strokes,indie rock,energetic,0.84,114,0.6,0.45,0.22
+67,505,Arctic Monkeys,indie rock,nostalgic,0.81,136,0.84,0.88,0.53
+68,Ditto,NewJeans,k-pop,playful,0.79,122,0.61,0.53,0.48
+69,DNA,BTS,k-pop,uplifting,0.88,135,0.44,0.53,0.3
+70,Rush,Ayra Starr,afrobeats,energetic,0.83,122,0.16,0.33,0.42
+71,Unforgettable,French Montana,afrobeats,uplifting,0.77,108,0.45,0.61,0.56
+72,Hips Don't Lie (feat. Wyclef Jean),Shakira,latin,playful,0.62,102,0.79,0.72,0.67
+73,Chantaje (feat. Maluma),Shakira,latin,romantic,0.78,119,0.26,0.94,0.63
+74,Rush,Troye Sivan,house,happy,0.87,129,0.7,0.89,0.09
+75,Lady (Hear Me Tonight),Modjo,house,euphoric,0.82,125,0.49,0.61,0.09

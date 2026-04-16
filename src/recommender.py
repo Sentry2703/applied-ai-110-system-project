@@ -88,9 +88,10 @@ class Recommender:
         self.songs = songs
 
     def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
+        results = recommend_songs(user, self.songs, k=k)
+        return [song for song, score, explanation in results]
 
+    @staticmethod
     def score_song(user_prefs: UserProfile, song: Song) -> int:
         score = (
             (user_prefs.favorite_genre == song.genre)  * 3.0  +  # rank 1 — categorical gate
@@ -104,8 +105,19 @@ class Recommender:
         return score
 
     def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
+        acoustic_pref = float(user.likes_acoustic)
+        reasons = []
+        if song.genre == user.favorite_genre:
+            reasons.append(f"genre matches ({song.genre})")
+        if song.mood == user.favorite_mood:
+            reasons.append(f"mood matches ({song.mood})")
+        if closeness(user.target_energy, song.energy) >= 0.8:
+            reasons.append(f"energy is close ({song.energy})")
+        if closeness(acoustic_pref, song.acousticness) >= 0.8:
+            reasons.append(f"acousticness fits ({song.acousticness})")
+        if closeness(user.danceability, song.danceability) >= 0.8:
+            reasons.append(f"danceability fits ({song.danceability})")
+        return ("Recommended because: " + ", ".join(reasons)) if reasons else "Partial match on numeric features."
 
 def load_songs(csv_path: str) -> List[Dict]:
     """

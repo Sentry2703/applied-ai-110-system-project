@@ -308,7 +308,7 @@ def main():
         )
         raise SystemExit(1)
 
-    csv_path = Path(__file__).parent.parent / "data" / "new_songs.csv"
+    csv_path = Path(__file__).parent.parent / "data" / "songs.csv"
 
     existing, next_id = load_existing(csv_path)
     if args.replace:
