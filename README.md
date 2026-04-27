@@ -1,151 +1,165 @@
-# 🎵 Music Recommender Simulation
+# RAG-Enhanced Music Recommender
 
-## Project Summary
+## TITLE & SUMMARY
 
-In this project you will build and explain a small music recommender system.
+**Music Recommender Simulation — RAG + AI Edition**
 
-Your goal is to:
+A content-based music recommendation system that combines a RAG retrieval layer, a weighted scoring engine, and a Claude LLM evaluator to surface the best-fit songs for a user's taste profile. Built on top of the original weighted-scoring prototype, extended with a full Streamlit UI, feedback loop, and CLI pipeline.
 
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
+[Watch demo on Loom](https://www.loom.com/share/2f42ae37aab2483e8fa87584f555384c)
+---
 
-Replace this paragraph with your own summary of what your version does.
+## ARCHITECTURE OVERVIEW
+
+```
+User Input (genre, mood, energy, tempo, danceability, acoustic)
+        ↓
+  Profile Builder  [src/recommender.py → UserProfile]
+        ↓
+  Query Encoder  [src/rag_retriever.py → encode_profile()]
+        ↓
+  RAG Retriever  [src/rag_retriever.py → SongVectorStore.search()]
+  ~100-song vector store  →  top-20 candidates
+        ↓
+  Weighted Scorer  [src/recommender.py → recommend_songs()]
+  genre ×3 · mood ×2 · energy ×1.5 · acoustic ×1 · dance ×0.5 · tempo ×0.25
+        ↓
+  LLM Evaluator  [src/llm_evaluator.py → claude-sonnet-4-6]
+  re-ranks top-10 by nuanced vibe fit  →  top-5 with explanations
+        ↓
+  Output: CLI (src/main.py) or Streamlit UI (streamlit_app.py)
+        ↓
+  Human Review: thumbs up / down  →  Feedback Adapter  →  updated profile
+```
+
+See [assets/system_diagram.md](assets/system_diagram.md) for the full Mermaid diagram.
 
 ---
 
-## How The System Works
+## SETUP INSTRUCTIONS
 
-Explain your design in plain language.
+### 1. Prerequisites
 
-write a short paragraph explaining your understanding of how real-world recommendations work and what your version will prioritize
+- Python 3.12+
+- A terminal open at the project root
 
-In the real world, a recommender system makes its decisions based on mostly 2 factors, what people with similar tastes choose (Collaborative Filtering), or what songs are similar to songs that the user already likes (Content-Based Filtering).
-Since my version is lacking users, I will be more focused on Content-Based Filtering, i.e picking song recommendations based on similar attributes.
-My `Song` class will primarily use genre, mood, energy, acousticness, tempo_bpm, and my `UserProfile` class uses favorite genre, favorite_mood, target_energy, likes_acoustic.
-The recommender will compute recommendability scores, based on similarities to previously liked songs based on our aforementioned `Song` features
-
-### Algorithmic Flow Chart
-
-```
-  flowchart TD
-    A([User Preferences\ngenre: lofi · mood: chill\nenergy: 0.4 · likes_acoustic: true]) --> B
-
-    B[Load songs from\ndata/songs.csv] --> C
-
-    C{For each song\nin catalog}
-
-    C --> D1[Score: genre match\n× 3.0]
-    C --> D2[Score: mood match\n× 2.0]
-    C --> D3[Score: energy closeness\n× 1.5]
-    C --> D4[Score: acousticness closeness\n× 1.0]
-    C --> D5[Score: danceability closeness\n× 0.5]
-    C --> D6[Score: tempo closeness\n× 0.25]
-
-    D1 & D2 & D3 & D4 & D5 & D6 --> E
-
-    E[Sum all weighted scores\nmax possible = 8.25]
-
-    E --> F{More songs\nremaining?}
-
-    F -- Yes --> C
-    F -- No --> G
-
-    G[Sort all songs\nby score descending]
-
-    G --> H[Slice top k results\nk = 5]
-
-    H --> I([Output Recommendations\ntitle · score · explanation])
-```
-
-### Potential Biases
-
-There is a heavy bias towards genre and mood, which might miss out on sleeper picks based on other matching categories.
-
-![Run through of recommendation](image.png)
-
-### Other Run throughs
-
-#### Contradictory 
-![alt text](image-1.png)
-
-#### Gym Session
-![alt text](image-2.png)
-
-#### Late Night Choir
-![alt text](image-3.png)
-
-#### Sunday Morning 
-![alt text](image-4.png)
----
-
-## Getting Started
-
-### Setup
-
-1. Create a virtual environment (optional but recommended):
-
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate      # Mac or Linux
-   .venv\Scripts\activate         # Windows
-
-2. Install dependencies
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the app:
+`requirements.txt` includes: `pandas`, `pytest`, `streamlit`, `requests`, `numpy`, `anthropic`
 
-```bash
-python -m src.main
+### 3. Environment variables
+
+Create a `.env` file in the project root (never commit this):
+
+```
+# Required for LLM re-ranking (RAG + AI mode)
+GEMINI_API_KEY=your_key_here
+
+# Optional — only needed if using fetch_lastfm_songs.py
+LASTFM_API_KEY=your_key_here
 ```
 
-### Running Tests
+Get a free Gemini API key at [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) — no credit card required.
 
-Run the starter tests with:
+> Without `GEMINI_API_KEY`, the system still works — RAG + AI mode falls back to rule-based explanations automatically.
+
+### 4. (Optional) Expand the song catalog to ~100 songs
+
+The default catalog has 25 songs. To add real songs from Last.fm:
 
 ```bash
-pytest
+# Get a free API key at https://www.last.fm/api/account/create
+# Add LASTFM_API_KEY to your .env, then:
+python scripts/fetch_lastfm_songs.py --count 75
 ```
 
-You can add more tests in `tests/test_recommender.py`.
+Or generate synthetic songs instantly (no API key needed):
+
+```bash
+python scripts/generate_songs.py --count 75
+```
+
+Both scripts append to `data/songs.csv`.
 
 ---
 
-## Experiments You Tried
+## SAMPLE INTERACTIONS
 
-**Experiment 1 — Genre weight reduced from 3.0 to 0.5 (Late Night Coder profile)**
+### Streamlit UI
 
-With the default weight of 3.0, the top 3 results for the Late Night Coder profile were all lofi songs: Library Rain (8.01), Midnight Coding (7.92), and Focus Flow (6.03). Spacewalk Thoughts (ambient/chill) sat at rank 4 with a score of 4.85.
+```bash
+streamlit run streamlit_app.py
+```
 
-After lowering genre weight to 0.5, Spacewalk Thoughts jumped to rank 3 (4.85), pushing Focus Flow down to rank 4 (3.53). This happened because Spacewalk Thoughts has very similar energy (0.28) and acousticness (0.92) to the lofi songs, and mood matched (chill) — so with genre no longer dominating, its numeric features were enough to beat a lofi song that only partially matched on mood. The takeaway: genre weight is the primary guard against cross-genre drift. Weakening it lets acoustically similar but stylistically different songs sneak in.
+- Select genre, mood, energy, danceability, tempo, and acoustic preference in the sidebar
+- Choose **Basic** mode (weighted scorer only) or **RAG + AI** mode (full pipeline)
+- Click **Get Recommendations** to see top-5 results with scores and explanations
+- Hit 👍 / 👎 on any song, then **Apply feedback & refresh** to nudge your profile
+
+### CLI — basic mode
+
+```bash
+python src/main.py
+```
+
+Runs all 4 test profiles (Late Night Coder, Gym Session, Sunday Morning, Contradictory).
+
+```bash
+python src/main.py --profile "Late Night Coder" --k 3
+```
+
+### CLI — RAG + AI mode
+
+```bash
+python src/main.py --rag
+python src/main.py --rag --profile "Gym Session"
+```
 
 ---
 
-**Experiment 2 — Energy weight doubled from 1.5 to 3.0 (Contradictory profile)**
+## DESIGN DECISIONS
 
-With the default weights, the Contradictory profile (metal/peaceful/low energy/acoustic) ranked Iron Throne 2nd (3.63) because genre matched — even though every numeric feature pointed away from it. After doubling the energy weight to 3.0, Iron Throne dropped to rank 4 (3.85 total, but now outweighed by three songs with closer energy values). Still Water Sonata jumped to a score of 6.47, and Hollow Oak and Spacewalk Thoughts both overtook Iron Throne purely on energy and acousticness closeness. This confirmed that the genre match alone (worth 3.0 points) can be overwhelmed when a continuous feature carries enough weight — and that the Contradictory profile's genre preference is actively working against it in this configuration.
+**Why numpy cosine similarity instead of a vector DB?**
+At 100 songs, a matrix multiply over a 100×5 matrix takes microseconds. A full vector DB (Chroma, Pinecone) would add setup complexity for no measurable gain. The `SongVectorStore` can be swapped for a real DB later by replacing `search()`.
+
+**Why 5 numeric features for RAG, not genre/mood?**
+Genre and mood are categorical — cosine similarity on one-hot vectors would dominate the distance metric. The existing weighted scorer already handles them with high weights (×3, ×2). RAG handles the continuous features; the scorer handles the categorical gates.
+
+**Why does the LLM receive only the top-10, not all 100?**
+Fewer tokens = faster response and lower cost. The weighted scorer already filters strongly off-profile songs; the LLM's job is nuanced re-ranking within the plausible set, not discovery.
+
+**Why does the feedback loop adjust energy and danceability but not genre?**
+Genre is updated to the most-liked genre, but energy and danceability are nudged gradually (15% per cycle) to avoid overcorrecting from a single session.
+
+---
+
+## TESTING SUMMARY
+
+Run the test suite:
+
+```bash
+python -m pytest tests/ -v
+```
+
+**10 tests across 4 groups:**
+
+| Group | Tests |
+|---|---|
+| Core recommender | sorted scores, non-empty explanations |
+| RAG retriever | k results returned, correct top result, save/load roundtrip, unit vector encoding |
+| Feedback | like persists, energy nudge, no-rating passthrough |
+| LLM evaluator | graceful fallback without API key |
+
+All 10 pass with no API key required.
 
 ---
 
-## Limitations and Risks
+## REFLECTION
 
-- **Tiny catalog:** The system only scores against 25 songs, so even a perfect profile match returns a shallow pool. A user whose preferred genre has only one entry (e.g. blues, bossa nova) will get four recommendations from genres they didn't ask for.
-- **No content understanding:** The recommender has no knowledge of lyrics, language, vocal style, or instrumentation detail. Two songs can score identically even if one has screamed vocals and one has soft piano.
-- **Genre monopoly:** When genre and mood match multiple songs, those songs dominate all top slots. A lofi user will always see three lofi results with no exposure to adjacent styles like ambient or indie pop.
-- **Self-contradictory profiles are not detected:** If a user's preferences conflict internally (e.g. metal genre + peaceful mood + low energy), the system still returns five results with no warning — the top-ranked song wins almost by accident.
-- **Static weights:** The scoring weights (3.0, 2.0, 1.5 ...) are fixed by the developer and never adapt to how the user actually behaves. A user who skips every high-energy result will keep receiving them.
+The biggest challenge was connecting the RAG layer to the existing weighted scorer without changing `recommender.py`. The solution — treating RAG as a pre-filter that passes a `List[Song]` into the unchanged `recommend_songs()` — kept the original logic intact and made both modes (basic and RAG+AI) use the same scoring function.
 
----
-
-## Reflection
-
-Building this system made it clear that a recommender is not really about finding the "best" song — it is about turning a user's preferences into a number and then comparing that number across a catalog. Every design decision along the way (which features to include, how much weight each one gets, what counts as a match) is a human judgment call dressed up as math. The scoring formula feels objective once it is running, but the weights are arbitrary choices the developer made, and changing them by even a small amount can completely reorder the results. That gap between "looks like a calculation" and "is actually a set of assumptions" is something real recommendation systems deal with at massive scale.
-
-The place where bias showed up most clearly was in catalog representation. Genres with three songs in the dataset (lofi) had a structural advantage over genres with one (blues, bossa nova) — not because of anything in the scoring logic, but simply because more candidates means more chances for a close numeric match. A real product with this design would quietly under-serve users whose tastes fall outside whatever the team happened to catalog first, without any error or warning to indicate the problem. That made it obvious why fairness in AI is not just about the algorithm — it is equally about whose music, whose moods, and whose listening contexts made it into the data in the first place.
-
-
----
+The LLM evaluator adds the most value for edge cases: contradictory profiles (metal + peaceful) where numeric scores cluster tightly and a human-sounding explanation matters more than a 0.1-point score difference. It falls back gracefully, so the system is always usable regardless of API availability.
